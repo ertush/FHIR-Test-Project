@@ -1,5 +1,5 @@
 Profile: Kenyan_Patient
-Parent: Patient
+Parent: PatientUvIps
 Id: kenyan-patient-training
 Title: "Kenyan-Patient"
 Description: "Kenyan Patient Profile"
@@ -29,3 +29,13 @@ Description: "Kenyan Patient Profile"
 * identifier[NID].system = "http://jembi.org/fhir/ImplementationGuide/kenya-training-eric/identifier/nid"
 * identifier[MRN].value 1..1
 * identifier[MRN].system  = "http://jembi.org/fhir/ImplementationGuide/kenya-training-eric/identifier/mrn"
+* extension contains KeyPopulationStatusExtension named KPS 1..1
+
+Extension: KeyPopulationStatusExtension
+Id: key-population-status-extension
+Title: "Key Population Status Extension"
+Description: "Key Population Status Extension"
+* ^context[+].type = #element
+* ^context[=].expression = "Patient"
+* value[x] only CodeableConcept
+* valueCodeableConcept from KeyPopulationStatusValueSet (required)
