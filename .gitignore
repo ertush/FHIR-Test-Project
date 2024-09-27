@@ -23,5 +23,5 @@ Thumbs.db
 *.bak
 
 .vscode/
-docker-compose.yaml
-hapi.application.yaml
+
+hapi-fhir-server/
